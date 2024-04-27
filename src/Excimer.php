@@ -27,7 +27,7 @@ class Excimer
             $excimer->stop();
             $data = $excimer->getLog()->getSpeedscopeData();
             $data['profiles'][0]['name'] = $request_uri;
-            file_put_contents($root_dir . '/'.$name.'-' . gmdate( 'Y-m-d_His' ) . '.json',
+            file_put_contents($root_dir . '/'.$name.'-' . date('Y-m-d_His') . '.json',
                     json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
         } );
     }
