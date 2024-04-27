@@ -1,7 +1,6 @@
 {
     "name": "luar/php-excimer",
     "description": "Implements the MediaWiki Excimer class for ease of use. Generate a json file that you can upload to speedscope.app to view the profile.",
-    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "authors": [
