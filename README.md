@@ -25,10 +25,19 @@ composer require luar/php-excimer
 
 To use it simply include the following in php file:
 
+Use:
 ```php
 use Luar\Excimer;
+```
 
+For profiling
+```php
 Excimer::trace('/var/profiles/', 'filename', $_SERVER['REQUEST_URI']);
+```
+
+For a save a CSV file with time and memory used.
+```php
+Excimer::startTimer('/var/metrics/', 'php-memory-usage');
 ```
 
 ### Links
