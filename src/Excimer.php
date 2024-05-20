@@ -35,6 +35,16 @@ class Excimer
 
     public static function startTimer(string $root_dir, string $name = 'php-memory-usage')
     {
+        if (!extension_loaded('excimer') ) {
+            throw new Exception("Excimer extension is not installed on your php.ini");
+        }
+
+        if (!file_exists($root_dir)) {
+            if(!mkdir($root_dir, 0777, true)){
+                throw new Exception("Error when trying to create directory '" . $root_dir . "'");
+            }
+        }
+
         $timer = new ExcimerTimer;
         $timer->setPeriod(0.001); // 1ms
         $startTime = microtime( true );
